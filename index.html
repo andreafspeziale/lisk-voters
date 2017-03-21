@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="votersApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,6 +46,13 @@
               <div class="form-group">
                 <div class="col-md-12">
                   <input class="form-control" type="text" ng-model="addressToCompare" placeholder="Insert second Address">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-md-offset-3">
+              <div class="form-group">
+                <div class="col-md-12">
+                  <button class="btn btn-success pull-right" ng-click="checkDiff();">Check</button>
                 </div>
               </div>
             </div>

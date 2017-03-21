@@ -5,11 +5,11 @@ votersApp.controller('indexController', function indexController($scope, $http) 
     $scope.address = ""
     $scope.addressToCompare = ""
 
-    // $scope.checkDiff =  function() => {
-    //     if($scope.addressToCompare == "" && $scope.address == "") {
-    //
-    //     } else {
-    //         console.log($scope.address, $scope.addressToCompare)
-    //     }
-    // }
+    $scope.checkDiff = function() {
+        if($scope.addressToCompare == "" && $scope.address == "") {
+            console.log("empty use toastr")
+        } else {
+            console.log($scope.address, $scope.addressToCompare)
+        }
+    }
 });
