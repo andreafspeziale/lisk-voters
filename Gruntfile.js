@@ -8,6 +8,17 @@ module.exports = function(grunt){
             },
             options: {}
         },
+        copy: {
+            main: {
+                files: [
+                    {   expand: true, src: ['./bower_components/**'], dest: 'docs/' },
+                    {   expand: true, src: ['./js/**'], dest: 'docs/' },
+                    {   expand: true, src: ['./index.html'], dest: 'docs/' },
+                    {   expand: true, src: ['./style/*.css', '!./style/*.styl'], dest: 'docs/' },
+                    {   expand: true, src: ['./img/**'], dest: 'docs/' }
+                ]
+            }
+        },
         watch: {
             bower: {
                 files: ['bower_components/*'],
@@ -16,5 +27,5 @@ module.exports = function(grunt){
         }
     })
     grunt.registerTask('default', ['wiredep', 'watch']);
-    grunt.registerTask('build', ['wiredep']);
+    grunt.registerTask('build', ['wiredep','copy']);
 }
