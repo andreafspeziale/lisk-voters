@@ -4,12 +4,12 @@ votersApp.controller('indexController', function indexController($scope, $http, 
 
     $scope.delegate = { you: '', other: '' };
     $scope.loading = 'no';
-    $scope.node = 'https://liskwallet.punkrock.me:8000';
+    $scope.node = 'liskwallet.punkrock.me';
     $scope.error = '';
     $scope.data = {};
 
     updateDelegate = function (name, handler) {
-        $http.get ($scope.node + '/api/delegates/get?username=' + name).then (
+        $http.get ('https://' + $scope.node + '/api/delegates/get?username=' + name).then (
             function (data) {
                 if (!data.data.success) {
                     $scope.error = 'Delegate ' + name + ' not found.';
@@ -17,11 +17,11 @@ votersApp.controller('indexController', function indexController($scope, $http, 
                     toastr.error('Delegate name error: ' + name + 'does not exist', 'Error');
                     return;
                 }
-                $http.get ($scope.node + '/api/accounts/getBalance?address=' + data.data.delegate.address).then (
+                $http.get ('https://' + $scope.node + '/api/accounts/getBalance?address=' + data.data.delegate.address).then (
                     function (data2) {
                         data.data.delegate.balance = data2.data.balance / 100000000;
 
-                        $http.get ($scope.node + '/api/delegates/voters?publicKey=' + data.data.delegate.publicKey).then (
+                        $http.get ('https://' + $scope.node + '/api/delegates/voters?publicKey=' + data.data.delegate.publicKey).then (
                             function (data3) {
                                 data.data.delegate.voters = data3.data.accounts;
                                 return handler (data.data.delegate);
