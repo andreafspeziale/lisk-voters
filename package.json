@@ -1,0 +1,31 @@
+{
+    "name": "lisk-voters",
+    "version": "1.0.0",
+    "description": "create a list of voters based on their weight",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "keywords": [
+        "lisk"
+    ],
+    "author": ["andreafspeziale (liskit)","Davide Gessa (dakk)"],
+    "license": "ISC",
+    "dependencies": {
+        "liskapi": "^0.1.1",
+        "lodash": "^4.17.2",
+        "request": "^2.79.0"
+    },
+    "devDependencies": {
+        "grunt": "^0.4.5",
+        "grunt-cli": "^0.1.13",
+        "grunt-contrib-stylus": "^1.2.0",
+        "grunt-contrib-watch": "~0.6.1",
+        "grunt-wiredep": "~2.0.0",
+        "load-grunt-tasks": "^3.2.0"
+    }
+}
