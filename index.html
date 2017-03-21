@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="votersApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +25,64 @@
     <![endif]-->
   </head>
   <body ng-controller="indexController">
-    <h1>Hello, world!</h1>
+    <div class="container">
+      <h1>Lisk voters</h1>
+
+      <input ng-model="delegate.you" placeholder="Your delegate name" class="form-control" />
+      <input ng-model="delegate.other" placeholder="Other delegate name" class="form-control" />
+      <button ng-click="inspect()" class="btn btn-info btn-raised btn-block">Inspect</button>
+
+      <hr>
+      <div ng-if="loading == 'yes'" align="center">
+        <i class="fa fa-spin fa-refresh" style="font-size: 300%"></i><br>
+        <i>Data is loading, please wait...</i>
+      </div>
+      <div ng-if="loading == 'no'"></div>
+      <div ng-if="loading == 'completed'">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th></th>
+              <th>You</th>
+              <th>Other</th>
+              <th>Diff</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Balance</td>
+              <td>{{data.balance[0]}}</td>
+              <td>{{data.balance[1]}}</td>
+              <td>{{data.balance[0] - data.balance[1]}}</td>
+            </tr>
+            <tr>
+              <td>Rank</td>
+              <td>{{data.rank[0]}}</td>
+              <td>{{data.rank[1]}}</td>
+              <td>{{data.rank[0] - data.rank[1]}}</td>
+            </tr>
+            <tr>
+              <td>Approval</td>
+              <td>{{data.approval[0]}}</td>
+              <td>{{data.approval[1]}}</td>
+              <td>{{data.approval[0] - data.approval[1]}}</td>
+            </tr>
+            <tr>
+              <td>Forged</td>
+              <td>{{data.forged[0]}}</td>
+              <td>{{data.forged[1]}}</td>
+              <td>{{data.forged[0] - data.forged[1]}}</td>
+            </tr>
+            <tr>
+              <td>Voted back</td>
+              <td>{{data.vote[0]}}</td>
+              <td>{{data.vote[1]}}</td>
+              <td></td>
+            </tr>
+          </tbody>
+      </div>
+
+    </div>
 
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
