@@ -1,7 +1,18 @@
 var votersApp = angular.module ('votersApp', []);
 
 votersApp.controller('indexController', function indexController($scope, $http) {
-    $scope.lignode = "liskwallet.punkrock.me"
+
+    $scope.delegate = { you: '', other: '' };
+    $scope.loading = 'no';
+    $scope.node = 'liskwallet.punkrock.me';
+
+    $scope.inspect = function () {
+        $scope.loading = 'yes';
+
+        //'/api/delegates/get?username=' + $scope.delegate.you
+    };
+
+    /*$scope.lignode = "liskwallet.punkrock.me"
     $scope.address = ""
     $scope.addressToCompare = ""
 
@@ -12,4 +23,6 @@ votersApp.controller('indexController', function indexController($scope, $http) 
             console.log($scope.address, $scope.addressToCompare)
         }
     }
+    */
+
 });
