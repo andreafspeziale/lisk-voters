@@ -4,7 +4,7 @@ votersApp.controller('indexController', function indexController($scope, $http, 
 
     $scope.delegate = { you: '', other: '' };
     $scope.loading = 'no';
-    $scope.node = 'http://liskwallet.punkrock.me:8000';
+    $scope.node = 'https://liskwallet.punkrock.me:8000';
     $scope.error = '';
     $scope.data = {};
 
