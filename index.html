@@ -62,9 +62,9 @@
             </tr>
             <tr>
               <td>Balance</td>
-              <td>{{data.you.balance|number:8}}</td>
-              <td>{{data.other.balance|number:8}}</td>
-              <td>{{data.you.balance - data.other.balance|number:8}}</td>
+              <td>{{data.you.balance|number:2}}</td>
+              <td>{{data.other.balance|number:2}}</td>
+              <td>{{data.you.balance - data.other.balance|number:2}}</td>
             </tr>
             <tr>
               <td>Rank</td>
@@ -76,13 +76,13 @@
               <td>Approval</td>
               <td>{{data.you.approval}}</td>
               <td>{{data.other.approval}}</td>
-              <td>{{data.you.approval - data.other.approval}}</td>
+              <td>{{data.you.approval - data.other.approval|number:2}}</td>
             </tr>
             <tr>
               <td>Productivity</td>
               <td>{{data.you.productivity}}</td>
               <td>{{data.other.productivity}}</td>
-              <td>{{data.you.productivity - data.other.productivity}}</td>
+              <td>{{data.you.productivity - data.other.productivity|number:2}}</td>
             </tr>
             <tr>
               <td>Voted back</td>
