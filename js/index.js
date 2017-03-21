@@ -3,7 +3,7 @@ var votersApp = angular.module ('votersApp', []);
 votersApp.controller('indexController', function indexController($scope, $http) {
     $scope.delegate = { you: '', other: '' };
     $scope.loading = 'no';
-    $scope.node = '';
+    $scope.node = 'liskwallet.punkrock.me';
 
     $scope.inspect = function () {
         $scope.loading = 'yes';
