@@ -84,15 +84,30 @@
               <td>{{data.other.productivity}}</td>
               <td>{{data.you.productivity - data.other.productivity|number:2}}</td>
             </tr>
-            <tr>
-              <td>Voted back</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
           </tbody>
+          </table>
+
+          <hr>
+          <h2>Vote diff</h2>
+          <p>Votes received by other and not received by you, sorted by balance</p>
+
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th>Name / address</th>
+                <th>Balance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="v in notshared">
+                <td>{{v.username || v.address}}</td>
+                <td>{{v.balance / 100000000 | number: 2}}</td>
+              </tr>
+            </tbody>
+           </table>
       </div>
 
+      
 
         <!--
         <div class="row">
